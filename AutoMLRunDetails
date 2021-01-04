@@ -1,0 +1,188 @@
+Running on remote.
+No run_configuration provided, running on cpu-cluster with default configuration
+Running on remote compute: cpu-cluster
+Parent Run ID: AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a
+
+Current status: FeaturesGeneration. Generating features for the dataset.
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Class balancing detection
+STATUS:       ALERTED
+DESCRIPTION:  To decrease model bias, please cancel the current run and fix balancing problem.
+              Learn more about imbalanced data: https://aka.ms/AutomatedMLImbalancedData
+DETAILS:      Imbalanced data can lead to a falsely perceived positive effect of a model's accuracy because the input data has bias towards one class.
++---------------------------------+---------------------------------+--------------------------------------+
+|Size of the smallest class       |Name/Label of the smallest class |Number of samples in the training data|
++=================================+=================================+======================================+
+|2582                             |1                                |23065                                 |
++---------------------------------+---------------------------------+--------------------------------------+
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         High cardinality feature detection
+STATUS:       PASSED
+DESCRIPTION:  Your inputs were analyzed, and no high cardinality features were detected.
+              Learn more about high cardinality feature handling: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler LightGBM                          0:00:56       0.9169    0.9169
+         1   MaxAbsScaler XGBoostClassifier                 0:00:58       0.9153    0.9169
+         2   MinMaxScaler RandomForest                      0:00:58       0.8985    0.9169
+         3   MinMaxScaler RandomForest                      0:01:01       0.8881    0.9169
+         4   MinMaxScaler RandomForest                      0:00:45       0.8176    0.9169
+         5   SparseNormalizer XGBoostClassifier             0:01:09       0.9073    0.9169
+         6   MaxAbsScaler GradientBoosting                  0:01:00       0.9034    0.9169
+         7   SparseNormalizer XGBoostClassifier             0:00:50       0.8983    0.9169
+         8   MinMaxScaler LightGBM                          0:00:51       0.8916    0.9169
+         9   MinMaxScaler LogisticRegression                0:00:48       0.9096    0.9169
+        10   StandardScalerWrapper LogisticRegression       0:01:08       0.9101    0.9169
+        11   MinMaxScaler LightGBM                          0:00:46       0.8930    0.9169
+        12   StandardScalerWrapper LightGBM                 0:00:51       0.8881    0.9169
+        13   SparseNormalizer LightGBM                      0:00:45       0.8969    0.9169
+        14   MinMaxScaler LightGBM                          0:00:49       0.8881    0.9169
+        15   RobustScaler ExtremeRandomTrees                0:01:00       0.8941    0.9169
+        16   StandardScalerWrapper RandomForest             0:00:52       0.8881    0.9169
+        17   SparseNormalizer XGBoostClassifier             0:01:26       0.9089    0.9169
+        18   SparseNormalizer XGBoostClassifier             0:00:56       0.9061    0.9169
+        19   StandardScalerWrapper XGBoostClassifier        0:00:50       0.9025    0.9169
+        20   MinMaxScaler RandomForest                      0:01:01       0.9116    0.9169
+        21   MaxAbsScaler RandomForest                      0:00:48       0.7694    0.9169
+        22   MaxAbsScaler LightGBM                          0:00:55       0.9114    0.9169
+        23   SparseNormalizer LightGBM                      0:00:57       0.9025    0.9169
+        24   SparseNormalizer XGBoostClassifier             0:01:02       0.9093    0.9169
+        25                                                  0:00:17          nan    0.9169
+        26    VotingEnsemble                                0:01:18       0.9177    0.9177
+        27    StackEnsemble                                 0:01:35       0.9146    0.9177
+
+
+Run is Completed
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Class balancing detection
+STATUS:       ALERTED
+DESCRIPTION:  To decrease model bias, please cancel the current run and fix balancing problem.
+              Learn more about imbalanced data: https://aka.ms/AutomatedMLImbalancedData
+DETAILS:      Imbalanced data can lead to a falsely perceived positive effect of a model's accuracy because the input data has bias towards one class.
++---------------------------------+---------------------------------+--------------------------------------+
+|Size of the smallest class       |Name/Label of the smallest class |Number of samples in the training data|
++=================================+=================================+======================================+
+|2582                             |1                                |23065                                 |
++---------------------------------+---------------------------------+--------------------------------------+
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         High cardinality feature detection
+STATUS:       PASSED
+DESCRIPTION:  Your inputs were analyzed, and no high cardinality features were detected.
+              Learn more about high cardinality feature handling: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler LightGBM                          0:00:56       0.9169    0.9169
+         1   MaxAbsScaler XGBoostClassifier                 0:00:58       0.9153    0.9169
+         2   MinMaxScaler RandomForest                      0:00:58       0.8985    0.9169
+         3   MinMaxScaler RandomForest                      0:01:01       0.8881    0.9169
+         4   MinMaxScaler RandomForest                      0:00:45       0.8176    0.9169
+         5   SparseNormalizer XGBoostClassifier             0:01:09       0.9073    0.9169
+         6   MaxAbsScaler GradientBoosting                  0:01:00       0.9034    0.9169
+         7   SparseNormalizer XGBoostClassifier             0:00:50       0.8983    0.9169
+         8   MinMaxScaler LightGBM                          0:00:51       0.8916    0.9169
+         9   MinMaxScaler LogisticRegression                0:00:48       0.9096    0.9169
+        10   StandardScalerWrapper LogisticRegression       0:01:08       0.9101    0.9169
+        11   MinMaxScaler LightGBM                          0:00:46       0.8930    0.9169
+        12   StandardScalerWrapper LightGBM                 0:00:51       0.8881    0.9169
+        13   SparseNormalizer LightGBM                      0:00:45       0.8969    0.9169
+        14   MinMaxScaler LightGBM                          0:00:49       0.8881    0.9169
+        15   RobustScaler ExtremeRandomTrees                0:01:00       0.8941    0.9169
+        16   StandardScalerWrapper RandomForest             0:00:52       0.8881    0.9169
+        17   SparseNormalizer XGBoostClassifier             0:01:26       0.9089    0.9169
+        18   SparseNormalizer XGBoostClassifier             0:00:56       0.9061    0.9169
+        19   StandardScalerWrapper XGBoostClassifier        0:00:50       0.9025    0.9169
+        20   MinMaxScaler RandomForest                      0:01:01       0.9116    0.9169
+        21   MaxAbsScaler RandomForest                      0:00:48       0.7694    0.9169
+        22   MaxAbsScaler LightGBM                          0:00:55       0.9114    0.9169
+        23   SparseNormalizer LightGBM                      0:00:57       0.9025    0.9169
+        24   SparseNormalizer XGBoostClassifier             0:01:02       0.9093    0.9169
+        25                                                  0:00:17          nan    0.9169
+        26    VotingEnsemble                                0:01:18       0.9177    0.9177
+        27    StackEnsemble                                 0:01:35       0.9146    0.9177
+{'runId': 'AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a',
+ 'target': 'cpu-cluster',
+ 'status': 'Completed',
+ 'startTimeUtc': '2021-01-04T14:16:50.972619Z',
+ 'endTimeUtc': '2021-01-04T15:00:16.138316Z',
+ 'properties': {'num_iterations': '1000',
+  'training_type': 'TrainFull',
+  'acquisition_function': 'EI',
+  'primary_metric': 'accuracy',
+  'train_split': '0',
+  'acquisition_parameter': '0',
+  'num_cross_validation': '5',
+  'target': 'cpu-cluster',
+  'AMLSettingsJsonString': '{"path":null,"name":"udacity-project","subscription_id":"5a4ab2ba-6c51-4805-8155-58759ad589d8","resource_group":"aml-quickstarts-133322","workspace_name":"quick-starts-ws-133322","region":"southcentralus","compute_target":"cpu-cluster","spark_service":null,"azure_service":"remote","many_models":false,"pipeline_fetch_max_batch_size":1,"iterations":1000,"primary_metric":"accuracy","task_type":"classification","data_script":null,"validation_size":0.0,"n_cross_validations":5,"y_min":null,"y_max":null,"num_classes":null,"featurization":"auto","_ignore_package_version_incompatibilities":false,"is_timeseries":false,"max_cores_per_iteration":1,"max_concurrent_iterations":1,"iteration_timeout_minutes":null,"mem_in_mb":null,"enforce_time_on_windows":false,"experiment_timeout_minutes":30,"experiment_exit_score":null,"whitelist_models":null,"blacklist_algos":["TensorFlowLinearClassifier","TensorFlowDNN"],"supported_models":["LogisticRegression","TensorFlowLinearClassifier","KNN","RandomForest","SGD","LinearSVM","SVM","BernoulliNaiveBayes","LightGBM","ExtremeRandomTrees","GradientBoosting","TensorFlowDNN","MultinomialNaiveBayes","AveragedPerceptronClassifier","DecisionTree","XGBoostClassifier"],"auto_blacklist":true,"blacklist_samples_reached":false,"exclude_nan_labels":true,"verbosity":20,"_debug_log":"azureml_automl.log","show_warnings":false,"model_explainability":true,"service_url":null,"sdk_url":null,"sdk_packages":null,"enable_onnx_compatible_models":false,"enable_split_onnx_featurizer_estimator_models":false,"vm_type":"STANDARD_D2_V2","telemetry_verbosity":20,"send_telemetry":true,"enable_dnn":false,"scenario":"SDK-1.13.0","environment_label":null,"force_text_dnn":false,"enable_feature_sweeping":true,"enable_early_stopping":false,"early_stopping_n_iters":10,"metrics":null,"enable_ensembling":true,"enable_stack_ensembling":true,"ensemble_iterations":15,"enable_tf":false,"enable_subsampling":null,"subsample_seed":null,"enable_nimbusml":false,"enable_streaming":false,"force_streaming":false,"track_child_runs":true,"allowed_private_models":[],"label_column_name":"y","weight_column_name":null,"cv_split_column_names":null,"enable_local_managed":false,"_local_managed_run_id":null,"cost_mode":1,"lag_length":0,"metric_operation":"maximize","preprocess":true}',
+  'DataPrepJsonString': '{\\"training_data\\": \\"{\\\\\\"blocks\\\\\\": [{\\\\\\"id\\\\\\": \\\\\\"f75eaead-5a14-460c-b33f-7ac8d7ab1eb5\\\\\\", \\\\\\"type\\\\\\": \\\\\\"Microsoft.DPrep.GetDatastoreFilesBlock\\\\\\", \\\\\\"arguments\\\\\\": {\\\\\\"datastores\\\\\\": [{\\\\\\"datastoreName\\\\\\": \\\\\\"workspaceblobstore\\\\\\", \\\\\\"path\\\\\\": \\\\\\"data/train-data.csv\\\\\\", \\\\\\"resourceGroup\\\\\\": \\\\\\"aml-quickstarts-133322\\\\\\", \\\\\\"subscription\\\\\\": \\\\\\"5a4ab2ba-6c51-4805-8155-58759ad589d8\\\\\\", \\\\\\"workspaceName\\\\\\": \\\\\\"quick-starts-ws-133322\\\\\\"}]}, \\\\\\"localData\\\\\\": {}, \\\\\\"isEnabled\\\\\\": true, \\\\\\"name\\\\\\": null, \\\\\\"annotation\\\\\\": null}, {\\\\\\"id\\\\\\": \\\\\\"f1a913cc-15f9-4c0a-b4f4-696f47beca36\\\\\\", \\\\\\"type\\\\\\": \\\\\\"Microsoft.DPrep.ParseDelimitedBlock\\\\\\", \\\\\\"arguments\\\\\\": {\\\\\\"columnHeadersMode\\\\\\": 3, \\\\\\"fileEncoding\\\\\\": 0, \\\\\\"handleQuotedLineBreaks\\\\\\": false, \\\\\\"preview\\\\\\": false, \\\\\\"separator\\\\\\": \\\\\\",\\\\\\", \\\\\\"skipRows\\\\\\": 0, \\\\\\"skipRowsMode\\\\\\": 0}, \\\\\\"localData\\\\\\": {}, \\\\\\"isEnabled\\\\\\": true, \\\\\\"name\\\\\\": null, \\\\\\"annotation\\\\\\": null}, {\\\\\\"id\\\\\\": \\\\\\"389be54c-b643-41e0-afa6-9ca1e308b8b2\\\\\\", \\\\\\"type\\\\\\": \\\\\\"Microsoft.DPrep.DropColumnsBlock\\\\\\", \\\\\\"arguments\\\\\\": {\\\\\\"columns\\\\\\": {\\\\\\"type\\\\\\": 0, \\\\\\"details\\\\\\": {\\\\\\"selectedColumns\\\\\\": [\\\\\\"Path\\\\\\"]}}}, \\\\\\"localData\\\\\\": {}, \\\\\\"isEnabled\\\\\\": true, \\\\\\"name\\\\\\": null, \\\\\\"annotation\\\\\\": null}, {\\\\\\"id\\\\\\": \\\\\\"42a91458-67e6-4226-9f21-41a6901d9beb\\\\\\", \\\\\\"type\\\\\\": \\\\\\"Microsoft.DPrep.SetColumnTypesBlock\\\\\\", \\\\\\"arguments\\\\\\": {\\\\\\"columnConversion\\\\\\": [{\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"Column1\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"age\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"marital\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"default\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"housing\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"loan\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"month\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"day_of_week\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"duration\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"campaign\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"pdays\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"previous\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"poutcome\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"emp.var.rate\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 3}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"cons.price.idx\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 3}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"cons.conf.idx\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 3}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"euribor3m\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 3}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"nr.employed\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 3}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_admin.\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_blue-collar\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_entrepreneur\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_housemaid\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_management\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_retired\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_self-employed\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_services\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_student\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_technician\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_unemployed\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"job_unknown\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"contact_cellular\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"contact_telephone\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_basic.4y\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_basic.6y\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_basic.9y\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_high.school\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_illiterate\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_professional.course\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_university.degree\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"education_unknown\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}, {\\\\\\"column\\\\\\": {\\\\\\"type\\\\\\": 2, \\\\\\"details\\\\\\": {\\\\\\"selectedColumn\\\\\\": \\\\\\"y\\\\\\"}}, \\\\\\"typeProperty\\\\\\": 2}]}, \\\\\\"localData\\\\\\": {}, \\\\\\"isEnabled\\\\\\": true, \\\\\\"name\\\\\\": null, \\\\\\"annotation\\\\\\": null}], \\\\\\"inspectors\\\\\\": [], \\\\\\"meta\\\\\\": {\\\\\\"savedDatasetId\\\\\\": \\\\\\"919c2017-1c53-46c0-93f1-d1f5896da8bf\\\\\\", \\\\\\"datasetType\\\\\\": \\\\\\"tabular\\\\\\", \\\\\\"subscriptionId\\\\\\": \\\\\\"5a4ab2ba-6c51-4805-8155-58759ad589d8\\\\\\", \\\\\\"workspaceId\\\\\\": \\\\\\"803e10f6-f3b7-460a-858d-f7007ea83ca9\\\\\\", \\\\\\"workspaceLocation\\\\\\": \\\\\\"southcentralus\\\\\\"}}\\", \\"activities\\": 0}',
+  'EnableSubsampling': None,
+  'runTemplate': 'AutoML',
+  'azureml.runsource': 'automl',
+  'display_task_type': 'classification',
+  'dependencies_versions': '{"azureml-widgets": "1.19.0", "azureml-train": "1.19.0", "azureml-train-restclients-hyperdrive": "1.19.0", "azureml-train-core": "1.19.0", "azureml-train-automl": "1.19.0", "azureml-train-automl-runtime": "1.19.0", "azureml-train-automl-client": "1.19.0", "azureml-tensorboard": "1.19.0", "azureml-telemetry": "1.19.0", "azureml-sdk": "1.19.0", "azureml-samples": "0+unknown", "azureml-pipeline": "1.19.0", "azureml-pipeline-steps": "1.19.0", "azureml-pipeline-core": "1.19.0", "azureml-opendatasets": "1.19.0", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-mlflow": "1.19.0", "azureml-interpret": "1.19.0", "azureml-explain-model": "1.19.0", "azureml-defaults": "1.19.0", "azureml-dataset-runtime": "1.19.0", "azureml-dataprep": "2.6.1", "azureml-dataprep-rslex": "1.4.0", "azureml-dataprep-native": "26.0.0", "azureml-datadrift": "1.19.0", "azureml-core": "1.19.0", "azureml-contrib-services": "1.19.0", "azureml-contrib-server": "1.19.0", "azureml-contrib-reinforcementlearning": "1.19.0", "azureml-contrib-pipeline-steps": "1.19.0", "azureml-contrib-notebook": "1.19.0", "azureml-contrib-interpret": "1.19.0", "azureml-contrib-gbdt": "1.19.0", "azureml-contrib-fairness": "1.19.0", "azureml-contrib-dataset": "1.19.0", "azureml-cli-common": "1.19.0", "azureml-automl-runtime": "1.19.0", "azureml-automl-core": "1.19.0", "azureml-accel-models": "1.19.0"}',
+  '_aml_system_scenario_identification': 'Remote.Parent',
+  'ClientType': 'SDK',
+  'environment_cpu_name': 'AzureML-AutoML',
+  'environment_cpu_label': 'prod',
+  'environment_gpu_name': 'AzureML-AutoML-GPU',
+  'environment_gpu_label': 'prod',
+  'root_attribution': 'automl',
+  'attribution': 'AutoML',
+  'Orchestrator': 'AutoML',
+  'CancelUri': 'https://southcentralus.experiments.azureml.net/jasmine/v1.0/subscriptions/5a4ab2ba-6c51-4805-8155-58759ad589d8/resourceGroups/aml-quickstarts-133322/providers/Microsoft.MachineLearningServices/workspaces/quick-starts-ws-133322/experimentids/eab30d54-b3eb-4d62-9ee7-454cbaf76fc9/cancel/AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a',
+  'ClientSdkVersion': '1.19.0',
+  'snapshotId': '00000000-0000-0000-0000-000000000000',
+  'SetupRunId': 'AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a_setup',
+  'SetupRunContainerId': 'dcid.AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a_setup',
+  'FeaturizationRunJsonPath': 'featurizer_container.json',
+  'FeaturizationRunId': 'AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a_featurize',
+  'ProblemInfoJsonString': '{"dataset_num_categorical": 0, "is_sparse": false, "subsampling": false, "dataset_classes": 2, "dataset_features": 40, "dataset_samples": 23065, "single_frequency_class_detected": false}',
+  'ModelExplainRunId': 'AutoML_e5e99d19-0f66-46bd-8ef1-57d7d23fee8a_ModelExplain'},
+ 'inputDatasets': [{'dataset': {'id': '919c2017-1c53-46c0-93f1-d1f5896da8bf'}, 'consumptionDetails': {'type': 'RunInput', 'inputName': 'training_data', 'mechanism': 'Direct'}}],
+ 'outputDatasets': [],
+ 'logFiles': {}}
