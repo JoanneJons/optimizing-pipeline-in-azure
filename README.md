@@ -7,16 +7,34 @@ This model is then compared to an Azure AutoML run.
 
 ## Summary
 **In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
+This project uses the UCI Bank Marketing Dataset that contains data about banking clients, which include personal details of clients like age, job, marital status etc and details regarding maketing campaigning.
+We seek to predict whether the client will subscribe a term deposit or not, hence making it a binary classification problem with two classes - 'yes' and 'no'.
 
 **In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
-.
-.
+The project consists of two methods:
+Method 1: Train a Scikit-learn Logistic Regression model with optmized hyperparameter tuning using HyperDrive
+Method 2: Use AutoML to build and optimize a model
+The results of the above methods are then compared.
+
+<architecture-image>
+
 The best performing model was the VotingEnsemble model selected through AutoML, which gave an accuracy of 0.91767. 
 The Logistic Regression model with hyperparameters selected through HyperDrive gave an accuracy of 9.90996
 
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
+
+<architecture-image>
+
+Data Preparation: A TabularDataset is created using Tabular DatasetFactory. The data is then cleaned and one hot encoded, and finally split into train and test sets. 
+
+Code Scikit-learn Logistic Regression Model: The Logistic regression model is created. The model requires two hyperparameters: C, which is the inverse of regularization strength and max-iter which is the maximum number of iterations to converge. The Logistic Regression classificatio algorithm uses a sigmoid function to model the probability of a set of binary classes (yes/no). In any Machine Learning model, there is a chance of overfitting, which is a phenomenon where the model becomes 'too comfortable' with the training data that it does not generalize well. Regularization combats overfitting by making the model coefficients smaller. Thus larger C means less regularization and smaller C means more regularization. 
+Accuracy is the primary metric here and that is saved in the run log.
+
+HyperDrive Configuration: HyperDrive is configured with the estimator (the file with the coded model), parameter sampler, early termination policy, primary metric name & goal, maximum total runs and maximum concurrent runs. The Hyperdrive run is then submitted to the experiment. Once the run is completed, the best metrics are obtained and the model from the best run is registered.
+
+Save Model: Once the run is completed, the best metrics are obtained and the model from the best run is registered.
 
 **What are the benefits of the parameter sampler you chose?**
 The parameter sampling method chosen for this experimnent is Random Sampling. Randing Sampling supports both discrete and continuous hyperparameters. In Logistic Regression, there are two hyperparameters:

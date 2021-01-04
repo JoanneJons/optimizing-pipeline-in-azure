@@ -38,24 +38,11 @@ def clean_data(data):
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
     return x_df, y_df
 
-# TODO: Create TabularDataset using TabularDatasetFactory
+
 # Data is located at:
 # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
 web_path = 'https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv'
-### ds = ### YOUR CODE HERE ###
-# ds = TabularDatasetFactory.from_delimited_files(web_path)
-#ds = Dataset.Tabular.from_delimited_files(web_path)
-
-# x, y = clean_data(ds)
-
-# TODO: Split data into train and test sets.
-
-### YOUR CODE HERE ###
-# x_train, y_train, x_test, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
-
-# run = Run.get_context()
-
 
 
 def main():
@@ -67,9 +54,12 @@ def main():
 
     args = parser.parse_args()
 
+    # Create TabularDataset using TabularDatasetFactory
     ds = TabularDatasetFactory.from_delimited_files(path=web_path)
+    
     x, y = clean_data(ds)
 
+    # Split data into train and test sets.
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
 
     run = Run.get_context()
