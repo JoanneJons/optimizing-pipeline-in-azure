@@ -32,14 +32,14 @@ The Logistic Regression model with hyperparameters selected through HyperDrive g
 A *TabularDataset* is created using *Tabular DatasetFactory*. The data is then cleaned & one hot encoded, and then split into train and test sets. 
 
 ### **Code Scikit-learn Logistic Regression Model** 
-The Logistic Regression model is created. The model requires two hyperparameters: **C**, which is the inverse of regularization strength and **max-iter**, which is the maximum number of iterations to converge.<br><br>The logistic regression classification algorithm uses a sigmoid function to model the probability of a set of binary classes (yes/no). In any machine learning model, there is a chance of overfitting, which is a phenomenon where the model becomes 'too comfortable' with the training data that it does not generalize well. Regularization combats overfitting by making the model coefficients smaller. Thus larger C means less regularization and smaller C means more regularization. <br>
+The Logistic regression model is created. The model requires two hyperparameters: **C**, which is the inverse of regularization strength and **max-iter**, which is the maximum number of iterations to converge.<br><br>The Logistic Regression classification algorithm uses a sigmoid function to model the probability of a set of binary classes (yes/no). In any Machine Learning model, there is a chance of overfitting, which is a phenomenon where the model becomes 'too comfortable' with the training data that it does not generalize well. Regularization combats overfitting by making the model coefficients smaller. Thus larger C means less regularization and smaller C means more regularization. <br>
 Accuracy is the primary metric here and that is saved in the run log.
 
 ### **HyperDrive Configuration** 
 HyperDrive is configured with the estimator, parameter sampler, early termination policy, primary metric name & goal, maximum total runs and maximum concurrent runs.  <br>
 
 **Parameter Sampling**<br>
-The parameter sampling method chosen for this experimnent is Random Sampling. Random Sampling supports both discrete and continuous hyperparameters. 
+The parameter sampling method chosen for this experimnent is Random Sampling. Randing Sampling supports both discrete and continuous hyperparameters. 
 Random sampling also supports early termination of low-performance runs. For each of the hyperparameters, hyperparameter space is defined. In this experiment,
 1. **C (inversion of regularization strength)** <br>
     `uniform (0.01, 1.00)`<br>
@@ -52,7 +52,7 @@ Hyperparameter values are randomly selected from the defined search space.
 
 **Early Termination Policy** <br>
 Automatically terminating poorly performing runs with an early termination policy improves computational efficiency.
-In this experiment, Bandit policy is used. Bandit policy is based on slack factor/slack amount and evaluation interval. Bandit Policy terminates runs where the primary metric is not within the specific slack factor/slack amount comapred to the best performing run. 
+In this experiment, Bandit policy is used. Bandit policy is based on slack factor/slack amount and evaluation interval. Bandit terminates runs where the primary metric is not within the specific slack factor/slack amount comapred to the best performing run. 
 The primary metric for the experiment is accuracy.
 
 The following configuration parameters were specified:
@@ -63,7 +63,7 @@ The following configuration parameters were specified:
 3. `slack_factor=0.1`<br>
     Any run whose best metric run is less than (1/(1+0.1)) or 91% of the best performing run will be terminated. 
 
-The Hyperdrive run is then submitted to the experiment. 
+The Hyperdrive run is then submitted to the experiment. Once the run is completed, the best metrics are obtained and the model from the best run is registered.
 
 ### **Save Model** 
 Once the run is completed, the best metrics are obtained and the model from the best run is registered.
@@ -71,10 +71,36 @@ Once the run is completed, the best metrics are obtained and the model from the 
 
 ## AutoML
 
-AutoML generated a **Voting Ensemble model** as the best fitted model, based on the primary metric accuracy.<br>
-The Voting Ensemble model defines an ensemble created from previous AutoML iterations and implements soft voting. The hyperparameters generated are the classifiers for the ensemble and the weights. 
+AutoML generated a **VotingEnsemble model** as the best fitted model, based on the primary metric accuracy.<br>
+The Voting Ensemble model defines an ensemble created from previous AutoML iterations and implements soft voting. Since this model requires outputs from multiple classifiers, the main parameters are the ensembled algorithms and their corresponding parameters like iterations and weights. 
+### Algorithms used
+* LightGBM
+* XGBoostClassifier
+* RandomForest
+* LightGBM
+* LogisticRegression
+* RandomForest
+### Parameters generated
+* `ensembled_iterations: [0, 1, 20, 22, 10, 21]` <br>
+Number of iterations in the algorithm
+* `weights=[0.4666666666666667, 0.2, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667]`
+* `min_impurity_split=None`<br>
+Impurity threshold for early stopping in tree growth in Random Forest algorithm.
+* `min_samples_leaf=0.035789473684210524`<br>
+In the Random Forest algorithm, a split point at any depth will only be considered if it leaves at least min_samples_leaf training samples in each of the left and right branches.
+* `min_samples_split=0.01`<br>
+The minimum number of samples required to split an internal node in the Random Forest algorithm
+* `min_weight_fraction_leaf=0.0`<br>
+The minimum weighted fraction of the sum total of weights required to be at a leaf node in the Random Forest Algorithm
+* `n_estimators=25`<br>
+The number of trees in the Random Forest Algorithm
+* `n_jobs=1`<br>
+The number of jobs to run in parallel
 
-`weights=[0.4666666666666667, 0.2, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667, 0.06666666666666667]`
+
+
+
+
                                                         
                                                                                                       
 
@@ -96,6 +122,3 @@ The Automatic Featurization feature in AutoML can be further explored. Future ex
 
 ## Proof of cluster clean up
 ![scikit-learn pipeline](./images/compute-cleanup.png)
-
-## References
-[Microsoft Azure Official Documentation & Sample Notebooks](https://docs.microsoft.com/en-us/azure/machine-learning/)
