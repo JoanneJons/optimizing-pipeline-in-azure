@@ -96,3 +96,6 @@ The Automatic Featurization feature in AutoML can be further explored. Future ex
 
 ## Proof of cluster clean up
 ![scikit-learn pipeline](./images/compute-cleanup.png)
+
+## References
+[Microsoft Azure Official Documentation & Sample Notebooks](https://docs.microsoft.com/en-us/azure/machine-learning/)
