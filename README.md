@@ -21,7 +21,7 @@ The results of the above methods are then compared.<br>
 ![project-overview](./images/project-overview.png)
 
 The best performing model was the **Voting Ensemble** model selected through AutoML, which gave an accuracy of 0.91767. <br> 
-The Logistic Regression model with hyperparameters selected through HyperDrive gave an accuracy of 9.90996. <br>
+The Logistic Regression model with hyperparameters selected through HyperDrive gave an accuracy of 0.90996. <br>
 
 
 ## Scikit-learn Pipeline
